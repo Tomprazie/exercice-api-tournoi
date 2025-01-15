@@ -13,8 +13,10 @@ class TestPlayerRepository : PlayerRepository {
     }
 
     override fun updatePoints(pseudo: String?, points: Int?) {
-        val player = players.find { it.pseudo == pseudo }
-        player?.points = points ?: 0
+        val playerIndex = players.indexOfFirst { it.pseudo == pseudo }
+        if (playerIndex != -1) {
+            players[playerIndex] = players[playerIndex].copy(points = points ?: 0)
+        }
     }
 
     override fun getPlayer(pseudo: String?): Player {
