@@ -103,8 +103,13 @@ docker exec -i POSTGRES psql -U postgres -d playerdb < console.sql
 - **Méthode:** `DELETE`
 
 
+## Points d'amélioration de l'application
 
+1. **Tests unitaires**: Ajouter des tests unitaires supplémentaires pour couvrir tous les cas d'utilisation possibles et garantir la fiabilité du code.
 
+2. **Gestion des erreurs**: Ajouter une gestion des erreurs plus robuste pour les différentes opérations de l'API, comme la validation des entrées et la gestion des exceptions.
+
+3. **Sécurité**: Implémenter des mécanismes de sécurité pour empêcher les attaques par injection SQL.
 
 
 
