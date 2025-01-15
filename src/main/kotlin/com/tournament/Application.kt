@@ -1,9 +1,9 @@
-package com.example
+package com.tournament
 
-import com.example.config.configureDatabases
-import com.example.repository.DatabasePlayerRepository
-import com.example.repository.PlayerRepository
-import com.example.routing.configureRouting
+import com.tournament.config.configureDatabases
+import com.tournament.repository.DatabasePlayerRepository
+import com.tournament.repository.PlayerRepository
+import com.tournament.routing.configureRouting
 import io.ktor.server.application.*
 import io.ktor.server.netty.*
 import org.koin.dsl.module

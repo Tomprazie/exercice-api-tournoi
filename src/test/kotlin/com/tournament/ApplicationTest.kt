@@ -1,10 +1,10 @@
-package com.example
+package com.tournament
 
-import com.example.model.Player
-import com.example.model.PlayerWithRanking
-import com.example.repository.PlayerRepository
-import com.example.repository.TestPlayerRepository
-import com.example.routing.configureRouting
+import com.tournament.model.Player
+import com.tournament.model.PlayerWithRanking
+import com.tournament.repository.PlayerRepository
+import com.tournament.repository.TestPlayerRepository
+import com.tournament.routing.configureRouting
 import io.ktor.client.call.*
 import io.ktor.client.plugins.contentnegotiation.*
 import io.ktor.client.request.*

@@ -1,10 +1,10 @@
-package com.example.repository
+package com.tournament.repository
 
-import com.example.db.PlayerDAO
-import com.example.db.PlayerTable
-import com.example.db.daoToModel
-import com.example.model.Player
-import com.example.model.PlayerWithRanking
+import com.tournament.db.PlayerDAO
+import com.tournament.db.PlayerTable
+import com.tournament.db.daoToModel
+import com.tournament.model.Player
+import com.tournament.model.PlayerWithRanking
 import org.jetbrains.exposed.sql.transactions.transaction
 
 class DatabasePlayerRepository: PlayerRepository {

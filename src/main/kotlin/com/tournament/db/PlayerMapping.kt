@@ -1,6 +1,6 @@
-package com.example.db
+package com.tournament.db
 
-import com.example.model.Player
+import com.tournament.model.Player
 import org.jetbrains.exposed.dao.IntEntity
 import org.jetbrains.exposed.dao.IntEntityClass
 import org.jetbrains.exposed.dao.id.EntityID

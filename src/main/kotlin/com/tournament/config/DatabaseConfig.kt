@@ -1,4 +1,4 @@
-package com.example.config
+package com.tournament.config
 
 import org.jetbrains.exposed.sql.Database
 

@@ -1,4 +1,4 @@
-package com.example.model
+package com.tournament.model
 
 import kotlinx.serialization.Serializable
 

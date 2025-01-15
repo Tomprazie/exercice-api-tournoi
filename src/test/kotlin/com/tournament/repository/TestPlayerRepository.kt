@@ -1,7 +1,7 @@
-package com.example.repository
+package com.tournament.repository
 
-import com.example.model.Player
-import com.example.model.PlayerWithRanking
+import com.tournament.model.Player
+import com.tournament.model.PlayerWithRanking
 
 class TestPlayerRepository : PlayerRepository {
     private val players = mutableListOf<Player>()

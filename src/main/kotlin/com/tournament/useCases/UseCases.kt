@@ -1,8 +1,8 @@
-package com.example.useCases
+package com.tournament.useCases
 
-import com.example.model.Player
-import com.example.model.PlayerWithRanking
-import com.example.repository.PlayerRepository
+import com.tournament.model.Player
+import com.tournament.model.PlayerWithRanking
+import com.tournament.repository.PlayerRepository
 
 object PlayerUseCases {
     lateinit var playerRepository: PlayerRepository

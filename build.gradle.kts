@@ -5,7 +5,7 @@ plugins {
     alias(libs.plugins.kotlin.plugin.serialization)
 }
 
-group = "com.example"
+group = "com.tournament"
 version = "0.0.1"
 
 application {

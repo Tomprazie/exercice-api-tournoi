@@ -1,4 +1,4 @@
-package com.example
+package com.tournament
 
 import io.ktor.serialization.kotlinx.json.*
 import io.ktor.server.application.*

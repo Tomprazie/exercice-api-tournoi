@@ -1,8 +1,8 @@
-package com.example.routing
+package com.tournament.routing
 
-import com.example.model.Player
-import com.example.repository.PlayerRepository
-import com.example.useCases.PlayerUseCases
+import com.tournament.model.Player
+import com.tournament.repository.PlayerRepository
+import com.tournament.useCases.PlayerUseCases
 import io.ktor.http.*
 import io.ktor.server.application.*
 import io.ktor.server.request.*
