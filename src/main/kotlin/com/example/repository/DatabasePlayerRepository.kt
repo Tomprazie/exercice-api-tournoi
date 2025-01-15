@@ -8,19 +8,19 @@ import com.example.model.PlayerWithRanking
 import org.jetbrains.exposed.sql.transactions.transaction
 
 class DatabasePlayerRepository: PlayerRepository {
-    override fun getAll(): List<Player> = transaction {
+    override fun getAllPlayers(): List<Player> = transaction {
         PlayerDAO.all().map(::daoToModel)
     }
 
 
-    override fun add(player: Player): Unit = transaction {
+    override fun addPlayer(player: Player): Unit = transaction {
         PlayerDAO.new {
             pseudo = player.pseudo
             points = player.points
         }
     }
 
-    override fun updatePoints(pseudo: String?, points: Int?) = transaction {
+    override fun updatePlayerPoints(pseudo: String?, points: Int?) = transaction {
         val player = PlayerDAO.find { PlayerTable.pseudo eq pseudo!! }.first()
         player.points = points!!
     }
@@ -34,12 +34,12 @@ class DatabasePlayerRepository: PlayerRepository {
         PlayerDAO.all().count { it.points > player.points } + 1
     }
 
-    override fun clear(): Unit = transaction {
+    override fun clearPlayers(): Unit = transaction {
         PlayerDAO.all().forEach { it.delete() }
     }
 
-    override fun getAllByRanking(): List<PlayerWithRanking> = transaction {
-        val players = getAll()
+    override fun getAllPlayersByRanking(): List<PlayerWithRanking> = transaction {
+        val players = getAllPlayers()
         players.sortedByDescending { it.points }
             .mapIndexed { index, player -> PlayerWithRanking(player, index + 1) }
     }

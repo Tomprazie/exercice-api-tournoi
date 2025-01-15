@@ -7,13 +7,13 @@ import com.example.repository.PlayerRepository
 object PlayerUseCases {
     lateinit var playerRepository: PlayerRepository
 
-    fun getAllPlayers(): List<Player> = playerRepository.getAll()
+    fun getAllPlayers(): List<Player> = playerRepository.getAllPlayers()
 
-    fun getAllPlayersByRanking(): List<PlayerWithRanking> = playerRepository.getAllByRanking()
+    fun getAllPlayersByRanking(): List<PlayerWithRanking> = playerRepository.getAllPlayersByRanking()
 
-    fun addPlayer(player: Player) = playerRepository.add(player)
+    fun addPlayer(player: Player) = playerRepository.addPlayer(player)
 
-    fun clearPlayers() = playerRepository.clear()
+    fun clearPlayers() = playerRepository.clearPlayers()
 
     fun getPlayerWithRanking(pseudo: String?): PlayerWithRanking {
         val player = playerRepository.getPlayer(pseudo)
@@ -21,5 +21,5 @@ object PlayerUseCases {
         return PlayerWithRanking(player, ranking)
     }
 
-    fun updatePlayerPoints(pseudo: String?, points: Int?) = playerRepository.updatePoints(pseudo, points)
+    fun updatePlayerPoints(pseudo: String?, points: Int?) = playerRepository.updatePlayerPoints(pseudo, points)
 }

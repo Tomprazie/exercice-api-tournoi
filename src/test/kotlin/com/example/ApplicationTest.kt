@@ -44,10 +44,10 @@ class ApplicationTest : KoinTest {
         startKoin {
             modules(testModule)
         }
-        playerRepository.clear()
-        playerRepository.add(Player("player1"))
-        playerRepository.add(Player("player2", 10))
-        playerRepository.add(Player("player3", 5))
+        playerRepository.clearPlayers()
+        playerRepository.addPlayer(Player("player1"))
+        playerRepository.addPlayer(Player("player2", 10))
+        playerRepository.addPlayer(Player("player3", 5))
     }
 
     @AfterTest
@@ -80,7 +80,7 @@ class ApplicationTest : KoinTest {
             setBody(player)
         }
 
-        val results = playerRepository.getAll()
+        val results = playerRepository.getAllPlayers()
         assertEquals(HttpStatusCode.Created, responseForPost.status)
         val actualPlayersPseudos = results.map(Player::pseudo)
         assertContentEquals(
@@ -99,7 +99,7 @@ class ApplicationTest : KoinTest {
             setBody(player)
         }
 
-        val results = playerRepository.getAll()
+        val results = playerRepository.getAllPlayers()
         val createdPlayer = results.find { it.pseudo == "player4" }
         assertEquals(0, createdPlayer?.points)
     }
@@ -114,7 +114,7 @@ class ApplicationTest : KoinTest {
         }
 
         assertEquals(HttpStatusCode.OK, responseForPut.status)
-        val results = playerRepository.getAll()
+        val results = playerRepository.getAllPlayers()
         val player = results.find { it.pseudo == "player1" }
         assertEquals(10, player?.points)
     }
@@ -159,7 +159,7 @@ class ApplicationTest : KoinTest {
         val response = client.delete("/players")
 
         assertEquals(HttpStatusCode.OK, response.status)
-        val players = playerRepository.getAll()
+        val players = playerRepository.getAllPlayers()
         assertEquals(0, players.size)
     }
 }

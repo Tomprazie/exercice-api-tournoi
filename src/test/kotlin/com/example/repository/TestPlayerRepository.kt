@@ -6,13 +6,13 @@ import com.example.model.PlayerWithRanking
 class TestPlayerRepository : PlayerRepository {
     private val players = mutableListOf<Player>()
 
-    override fun getAll(): List<Player> = players
+    override fun getAllPlayers(): List<Player> = players
 
-    override fun add(player: Player) {
+    override fun addPlayer(player: Player) {
         players.add(player)
     }
 
-    override fun updatePoints(pseudo: String?, points: Int?) {
+    override fun updatePlayerPoints(pseudo: String?, points: Int?) {
         val playerIndex = players.indexOfFirst { it.pseudo == pseudo }
         if (playerIndex != -1) {
             players[playerIndex] = players[playerIndex].copy(points = points ?: 0)
@@ -28,11 +28,11 @@ class TestPlayerRepository : PlayerRepository {
         return sortedPlayers.indexOfFirst { it.pseudo == pseudo } + 1
     }
 
-    override fun clear() {
+    override fun clearPlayers() {
         players.clear()
     }
 
-    override fun getAllByRanking(): List<PlayerWithRanking> {
+    override fun getAllPlayersByRanking(): List<PlayerWithRanking> {
         val sortedPlayers = players.sortedByDescending { it.points }
         return sortedPlayers.mapIndexed { index, player ->
             PlayerWithRanking(player, index + 1)
