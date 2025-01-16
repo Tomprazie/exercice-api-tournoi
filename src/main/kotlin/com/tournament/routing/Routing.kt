@@ -2,7 +2,7 @@ package com.tournament.routing
 
 import com.tournament.model.Player
 import com.tournament.repository.PlayerRepository
-import com.tournament.useCases.PlayerUseCases
+import com.tournament.usecase.PlayerUseCases
 import io.ktor.http.*
 import io.ktor.server.application.*
 import io.ktor.server.request.*
@@ -51,8 +51,6 @@ fun Application.configureRouting() {
                     call.respond(HttpStatusCode.OK)
                 }
             }
-
-
         }
     }
 }
