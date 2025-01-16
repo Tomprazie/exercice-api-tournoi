@@ -105,9 +105,13 @@ docker exec -i POSTGRES psql -U postgres -d playerdb < initDatabase.sql
 
 ## Points d'amélioration de l'application
 
-1. **Tests unitaires**: Ajouter des tests unitaires supplémentaires pour couvrir tous les cas d'utilisation possibles et garantir la fiabilité du code.
+1. **Gestion des erreurs**: Ajouter une gestion des erreurs plus robuste pour les différentes opérations de l'API:
+    - Gestion des erreurs pour retourner des messages d'erreur explicites
+    - Gestion des valeurs nulles
 
-2. **Gestion des erreurs**: Ajouter une gestion des erreurs plus robuste pour les différentes opérations de l'API, comme la validation des entrées et la gestion des exceptions.
+2. **Validation des données**: Ajouter des validations supplémentaires pour les données d'entrée:
+    - Empêcher l'ajout de joueurs avec le même pseudo ou un pseudo vide
+    - Empêcher l'ajout de joueurs avec un solde de points différent de 0
 
 3. **Sécurité**: Implémenter des mécanismes de sécurité pour empêcher les attaques par injection SQL.
 
