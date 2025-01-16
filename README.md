@@ -31,7 +31,7 @@ docker pull postgres:latest
 docker run -d --name POSTGRES -e POSTGRES_PASSWORD=password -p 5432:5432 postgres
 
 # Créer et peupler la base de données
-docker exec -i POSTGRES psql -U postgres -d playerdb < console.sql
+docker exec -i POSTGRES psql -U postgres -d playerdb < initDatabase.sql
 
 # Lancer l'application
 ./gradlew run
